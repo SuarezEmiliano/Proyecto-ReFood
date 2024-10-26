@@ -1,15 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 export function CarouselHomeTop({ images }) {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
   const showItem = (index) => {
     setCurrentSlideIndex(index);
-  };
-
-  const handlePrevSlide = () => {
-    const newIndex = (currentSlideIndex - 1 + images.length) % images.length;
-    showItem(newIndex);
   };
 
   const handleNextSlide = () => {
@@ -49,7 +44,7 @@ export function CarouselHomeTop({ images }) {
       <div className="relative h-full w-full overflow-hidden rounded-lg flex flex-row">
         {images.map((image, index) => (
           <div className="duration-700 ease-in-out" key={index} style={{ display: index === currentSlideIndex ? 'block' : 'none' }}>
-            <img src={image} className="w-screen h-full object-cover rounded-lg animated-opacity" alt="" />
+            <img src={image} className="w-screen h-full object-cover rounded-lg animated-opacity" alt="Imagen de Refood" />
           </div>
         ))}
       </div>

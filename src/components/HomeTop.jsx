@@ -2,7 +2,6 @@ import { CarouselHomeTop } from "./CarouselHomeTop";
 import imageRestaurant1 from "../assets/restaurante1.jpg";
 import imageRestaurant2 from "../assets/restaurante2.jpg";
 
-
 export function HomeTop() {
 
     const images = [

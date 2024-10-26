@@ -37,7 +37,6 @@ export default function Navbar() {
                         </h2>
                     </div>
 
-
                     <div className="flex items-center space-x-3">
                         <img className="border-[#278136] border-2 rounded-full w-12 h-12" src={fotoperfil} alt="fotoperfil" />
                     </div>

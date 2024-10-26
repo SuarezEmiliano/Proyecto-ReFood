@@ -1,5 +1,3 @@
-import React from 'react';
-
 const mockFoods = [
     {
         id: 1,
@@ -38,7 +36,7 @@ const mockFoods = [
     },
 ];
 
-const CardGallery = () => {
+export default function Navbar() {
     return (
         <div className="flex flex-wrap justify-center space-x-4 p-4">
             {mockFoods.map((food) => (
@@ -57,5 +55,3 @@ const CardGallery = () => {
         </div>
     );
 };
-
-export default CardGallery;

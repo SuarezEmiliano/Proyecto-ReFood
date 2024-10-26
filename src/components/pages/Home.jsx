@@ -14,7 +14,7 @@ export default function Home() {
                 <Navbar />
                 <HomeTop />
                 <div className='mt-10'>
-                <CardGallery />
+                    <CardGallery />
                 </div>
             </div>
         </>
