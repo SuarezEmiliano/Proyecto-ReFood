@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import fotoperfil from '../../assets/fotoperfil-SuarezEmiliano.jpg';
 import logo from '../../assets/logo.jpeg';
 
-export default function Navbar() {
+export default function NavbarOrder() {
     const navigate = useNavigate();
     const [isScrolled, setIsScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
@@ -25,7 +25,7 @@ export default function Navbar() {
     };
 
     return (
-        <div className={`fixed top-0 w-full z-50 transition duration-300 ${isScrolled ? 'bg-[#f8f3df] border-b-4 border-[#278136]' : 'bg-transparent'}`}>
+        <div className={`fixed top-0 w-full z-50 transition duration-300 bg-[#f8f3df] border-b-4 border-[#278136]`}>
             <div className="container mx-auto px-4 py-4">
                 <div className="flex items-center justify-between">
                     {/* Logo */}

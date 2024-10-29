@@ -1,3 +1,4 @@
+import { useNavigate} from "react-router-dom";
 const mockFoods = [
     {
         id: 1,
@@ -22,10 +23,10 @@ const mockFoods = [
     },
     {
         id: 4,
-        name: "Ensalada César",
-        description: "Ensalada fresca con lechuga, pollo a la parrilla, crutones y aderezo César.",
+        name: "Ravioles",
+        description: "Ravioles de verdura con salsa de tomate y albondigas de carne.",
         price: 5200,
-        imageUrl: "https://www.gourmet.cl/wp-content/uploads/2016/09/Ensalada_C%C3%A9sar-web.jpg"
+        imageUrl: "https://images.getrecipekit.com/20220120120502-ravioles-con-salsa-de-tomte.png?width=650&quality=90&"
     },
     {
         id: 5,
@@ -37,6 +38,14 @@ const mockFoods = [
 ];
 
 export default function Navbar() {
+    const navigate = useNavigate();
+    const handleVerPedido = () => {
+        navigate("/OrderPage");
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    };
     return (
         <div className="flex flex-wrap justify-center space-x-4 p-4">
             {mockFoods.map((food) => (
@@ -46,7 +55,7 @@ export default function Navbar() {
                         <h2 className="font-bold text-xl">{food.name}</h2>
                         <p className="text-gray-700">{food.description}</p>
                         <span className="block mt-2 text-lg font-semibold">${food.price.toFixed(2)}</span>
-                        <button className="mt-4 w-full border-[#278136] hover:bg-[#278136] text-[#278136] hover:text-white font-semibold py-2 rounded">
+                        <button onClick={handleVerPedido} className="mt-4 w-full border-[#278136] hover:bg-[#278136] text-[#278136] hover:text-white font-semibold py-2 rounded">
                             Ver más
                         </button>
                     </div>

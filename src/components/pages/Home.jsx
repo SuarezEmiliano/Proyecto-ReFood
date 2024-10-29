@@ -16,6 +16,9 @@ export default function Home() {
                 <div className='mt-10'>
                     <CardGallery />
                 </div>
+                <div className='mt-10'>
+                    <CardGallery />
+                </div>
             </div>
         </>
     )
