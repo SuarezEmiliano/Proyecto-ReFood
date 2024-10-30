@@ -1,13 +1,7 @@
 import { useState } from "react";
 import NavbarOrder from '../layout/NavbarOrder';
-import { CarouselHomeTop } from "../CarouselHomeTop";
-import { HomeTop } from '../HomeTop';
 import imageRestaurant1 from "../../assets/restaurante1.jpg";
 import  CardGallery  from '../CardGallery';
-
-const images = [
-    imageRestaurant1,
-];
 
 export default function OrderPage() {
     const sushiDish = {
@@ -15,11 +9,12 @@ export default function OrderPage() {
         description: "Deléitate con nuestra especialidad de sushi, hecha con los ingredientes más frescos y una fusión perfecta de sabores. Esta creación única combina la suavidad del salmón y el atún con la cremosidad del aguacate, todo envuelto en arroz perfectamente sazonado y alga nori.",
         ingredients: "Salmón, atún, aguacate, arroz, alga nori, wasabi, salsa de soja.",
         price: 1200,
+        discount: 20,
         amount: "8 piezas",
         imageUrl: "https://e00-elmundo.uecdn.es/assets/multimedia/imagenes/2024/06/17/17186166965831.jpg",
     };
 
-    const [quantity, setQuantity] = useState(1); // Estado para la cantidad
+    const [quantity, setQuantity] = useState(1); 
 
     const increaseQuantity = () => {
         setQuantity(quantity + 1);
@@ -31,7 +26,6 @@ export default function OrderPage() {
         }
     };
 
-    // Calcular el precio total
     const totalPrice = sushiDish.price * quantity;
 
     return (
@@ -74,7 +68,12 @@ export default function OrderPage() {
                                 </p>
                                 <h3 className="text-lg font-semibold mb-2">Seleccionar la cantidad de porciones:</h3>
                                 <div className="flex items-center justify-between mb-4">
-                                    <span className="text-xl font-semibold text-gray-800">${totalPrice}</span>
+                                    <div className="flex items-center mt-2">
+                                  <span className="text-xl font-semibold text-gray-800">${totalPrice}</span>
+                                  <span className="ml-3 bg-red-600 text-white text-sm font-bold px-2 py-1 rounded-md">
+                                      -{sushiDish.discount}% ¡Descuento!
+                                  </span>
+                              </div>
                                     <div className="flex items-center">
                                         <button onClick={decreaseQuantity} className="px-2 py-1 border border-gray-300 rounded-md">-</button>
                                         <span className="mx-2">{quantity}</span>

@@ -5,6 +5,7 @@ const mockFoods = [
         name: "Pizza Margherita",
         description: "Clásica pizza italiana con salsa de tomate, mozzarella y albahaca fresca.",
         price: 7800,
+        discount: 20,
         imageUrl: "https://www.clarin.com/img/2023/08/01/SL3EslnOA_360x240__1.jpg"
     },
     {
@@ -12,6 +13,7 @@ const mockFoods = [
         name: "Sushi Variado",
         description: "Selección de sushi fresco, incluyendo nigiri, sashimi y rolls.",
         price: 10500,
+        discount: 15,
         imageUrl: "https://media-cdn.tripadvisor.com/media/photo-s/1c/83/12/ba/combo-red30.jpg"
     },
     {
@@ -19,6 +21,7 @@ const mockFoods = [
         name: "Tacos de Carne Asada",
         description: "Deliciosos tacos de carne asada con cebolla, cilantro y salsa fresca.",
         price: 9700,
+        discount: 10,
         imageUrl: "https://cookingformysoul.com/wp-content/uploads/2024/04/feat-carne-asada-tacos-min.jpg"
     },
     {
@@ -26,6 +29,7 @@ const mockFoods = [
         name: "Ravioles",
         description: "Ravioles de verdura con salsa de tomate y albondigas de carne.",
         price: 5200,
+        discount: 10,
         imageUrl: "https://images.getrecipekit.com/20220120120502-ravioles-con-salsa-de-tomte.png?width=650&quality=90&"
     },
     {
@@ -33,6 +37,7 @@ const mockFoods = [
         name: "Pastel de Chocolate",
         description: "Delicioso pastel de chocolate con cobertura de ganache y fresas.",
         price: 3800,
+        discount: 15,
         imageUrl: "https://peopleenespanol.com/thmb/r0tzymajOXtWpFuQMCFn4xGjM4Q=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/1170f6d4-65a5-440c-a66b-01c6e5b06dca-7137a5706bee4ce7aabc4df13d713d2e.jpg"
     },
 ];
@@ -54,7 +59,12 @@ export default function Navbar() {
                     <div className="p-4">
                         <h2 className="font-bold text-xl">{food.name}</h2>
                         <p className="text-gray-700">{food.description}</p>
-                        <span className="block mt-2 text-lg font-semibold">${food.price.toFixed(2)}</span>
+                        <div className="flex items-center mt-2">
+                                  <span className="text-lg font-semibold">${food.price.toFixed(2)}</span>
+                                  <span className="ml-3 bg-red-600 text-white text-sm font-bold px-2 py-1 rounded-md">
+                                      -{food.discount}% ¡Descuento!
+                                  </span>
+                              </div>
                         <button onClick={handleVerPedido} className="mt-4 w-full border-[#278136] hover:bg-[#278136] text-[#278136] hover:text-white font-semibold py-2 rounded">
                             Ver más
                         </button>

@@ -29,9 +29,12 @@ export default function NavbarOrder() {
             <div className="container mx-auto px-4 py-4">
                 <div className="flex items-center justify-between">
                     {/* Logo */}
-                    <div className="flex items-center space-x-3">
+                    <div
+                        className="flex items-center space-x-3 cursor-pointer"
+                        onClick={() => navigate("/")}
+                    >
                         <img className="border-[#278136] border-2 rounded-full w-14 h-14" src={logo} alt="logo" />
-                        <h2 className="text-[#278136] text-3xl lg:text-4xl font-bold italic cursor-pointer" style={{ textShadow: "2px 2px 2px black" }}>
+                        <h2 className="text-[#278136] text-3xl lg:text-4xl font-bold italic" style={{ textShadow: "2px 2px 2px black" }}>
                             ReFood
                         </h2>
                     </div>
