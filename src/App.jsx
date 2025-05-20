@@ -3,6 +3,7 @@ import Home from './components/pages/Home'
 import HomeRestaurant from "./components/pages/HomeRestaurant";
 import OrderPage from "./components/pages/OrderPage";
 import RestaurantMenu from "./components/pages/RestaurantMenu";
+import ResultadosEncuestas from "./components/pages/ResultadosEncuestas";
 
 export default function App() {
 
@@ -14,6 +15,7 @@ export default function App() {
           <Route path="/home/restaurant" element={<HomeRestaurant />} />
           <Route path="/orderPage" element={<OrderPage />} />
           <Route path="/menu" element={<RestaurantMenu />} />
+          <Route path="/encuestas" element={<ResultadosEncuestas />} />
         </Routes>
       </BrowserRouter>
     </>

@@ -19,6 +19,7 @@
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.53.1",
     "react-router-dom": "^6.26.2",
+    "recharts": "^2.15.3",
     "refood-project": "file:",
     "sweetalert2": "^11.14.4",
     "tp6-frontend": "file:"
