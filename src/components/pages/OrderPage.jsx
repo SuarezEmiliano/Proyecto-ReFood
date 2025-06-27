@@ -2,6 +2,7 @@ import { useState } from "react";
 import NavbarOrder from '../layout/NavbarOrder';
 import imageRestaurant1 from "../../assets/restaurante1.jpg";
 import CardGallery from '../CardGallery';
+import { useNavigate } from "react-router-dom";
 
 export default function OrderPage() {
     const sushiDish = {
@@ -17,6 +18,7 @@ export default function OrderPage() {
     const [quantity, setQuantity] = useState(1);
     const [searchTerm, setSearchTerm] = useState("");
     const [filterType, setFilterType] = useState("");
+    const navigate = useNavigate()
 
     const allItems = [
         { name: "Sushi Especial", type: "japonés", price: 4200, discount: 20, image: sushiDish.imageUrl },
@@ -34,6 +36,11 @@ export default function OrderPage() {
     const decreaseQuantity = () => {
         if (quantity > 1) setQuantity(quantity - 1);
     };
+
+    const navigateOrderForm = () => {
+        navigate(`/order`)
+    }
+
 
     const totalPrice = sushiDish.price * quantity;
 
@@ -55,13 +62,7 @@ export default function OrderPage() {
                 <div className="flex flex-wrap max-w-5xl w-full p-4 mt-[200px] bg-black/50 rounded-md text-white">
                     <div className="w-full md:w-1/2 p-2">
                         <div className="h-full border border-gray-300 rounded-md overflow-hidden">
-                            <iframe
-                                className="w-full h-full"
-                                src="https://www.google.com/maps/embed?pb=!1m18..." // reemplaza con tu URL real
-                                allowFullScreen=""
-                                loading="lazy"
-                                title="Ubicación"
-                            ></iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2024.3037833108015!2d-64.18919796090834!3d-31.429012142061488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1750877518110!5m2!1ses!2sar" width="600" height="540" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
 
@@ -94,7 +95,7 @@ export default function OrderPage() {
                                         <button onClick={increaseQuantity} className="px-2 py-1 border border-gray-300 rounded-md">+</button>
                                     </div>
                                 </div>
-                                <button className="w-full h-10 flex items-center justify-center border-[#278136] hover:bg-[#278136] text-[#278136] hover:text-white font-semibold rounded-md transition-all duration-200">
+                                <button onClick={navigateOrderForm} className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-semibold transition">
                                     Ordenar
                                 </button>
                             </div>
@@ -202,6 +203,6 @@ export default function OrderPage() {
                     </button>
                 </div>
             </div>
-        </div>
+        </div >
     );
 }
